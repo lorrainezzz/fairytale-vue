@@ -7,7 +7,7 @@ import addFairytales from '@/components/addFairytales'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
 import AddAuthors from '@/components/addAuthors'
-import UserInfo from '@/components/userInfo'
+import UserInfo from '@/components/UserInfo'
 import ChangePsd from '@/components/changePsd'
 
 Vue.use(Router)
