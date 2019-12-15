@@ -12,7 +12,7 @@ describe('Fairy tale list', function () {
   })
   it('remove the fairy tale', function () {
     cy.setCookie('name', 'caroline')
-    cy.get(':nth-child(4) > :nth-child(7)').click()
+    cy.get('tbody > :nth-child(2) > :nth-child(7)').click()
     cy.get('.swal2-confirm').click()
   })
   it('filter by author', function () {

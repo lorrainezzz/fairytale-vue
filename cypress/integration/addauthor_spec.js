@@ -12,7 +12,7 @@ describe('Add a new author', function() {
       .select('Greek')
 
     cy.get(':nth-child(3) > .form__input')
-      .type(0)
+      .type(1)
 
     cy.get('.btn').click()
 

@@ -1,11 +1,11 @@
-describe('Fairy tale list', function() {
-  it('read the fairy tale list', function() {
+describe('Author list', function() {
+  it('read the author list', function() {
     cy.visit('/') // change URL to match your dev URL
     cy.setCookie('name', 'caroline')
     cy.get('#__BVID__12__BV_button_').click()
     cy.get('#__BVID__12 > .dropdown-menu > :nth-child(2) > .dropdown-item').click()
   })
-  it('add new fairy tale', function(){
+  it('add a new author', function(){
     cy.setCookie('name', 'caroline')
     cy.get('tbody > :nth-child(1) > :nth-child(5)').click()
   })
