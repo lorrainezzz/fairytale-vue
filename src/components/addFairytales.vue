@@ -54,7 +54,7 @@ import Vue from 'vue'
 import VueForm from 'vueform'
 import Vuelidate from 'vuelidate'
 import VueSweetalert from 'vue-sweetalert'
-import FairytaleService from '@/services/FairytaleService'
+import FairytaleService from '@/services/fairytaleservice'
 // eslint-disable-next-line no-unused-vars
 import {minLength, required} from 'vuelidate/lib/validators'
 

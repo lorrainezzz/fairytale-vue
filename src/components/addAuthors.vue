@@ -48,7 +48,7 @@ import Vue from 'vue'
 import VueForm from 'vueform'
 import Vuelidate from 'vuelidate'
 import VueSweetalert from 'vue-sweetalert'
-import AuthorService from '@/services/authorService'
+import AuthorService from '@/services/authorservice'
 
 Vue.use(VueForm, {
   inputClasses: {

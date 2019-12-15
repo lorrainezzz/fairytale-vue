@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import FairytaleService from '@/services/FairytaleService'
+import FairytaleService from '@/services/fairytaleservice'
 import Vue from 'vue'
 import VueTables from 'vue-tables-2'
 Vue.use(VueTables.ClientTable, {compileTemplates: true, filterByColumn: true})

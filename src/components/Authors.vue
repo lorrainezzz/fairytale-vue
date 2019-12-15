@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import AuthorService from '@/services/authorService'
+import AuthorService from '@/services/authorservice'
 import Vue from 'vue'
 import VueTables from 'vue-tables-2'
 Vue.use(VueTables.ClientTable, {compileTemplates: true, filterByColumn: true})
