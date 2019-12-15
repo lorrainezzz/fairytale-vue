@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import UserService from '@/services/userService'
+import UserService from '@/services/userservice'
 export default {
   name: 'App',
   data () {
