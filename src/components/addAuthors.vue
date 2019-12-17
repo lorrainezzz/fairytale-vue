@@ -86,27 +86,21 @@ export default {
     submit () {
       console.log('submit!')
 
-      this.submitStatus = 'PENDING'
-      setTimeout(() => {
-        this.submitStatus = 'OK'
-        this.author = {
-          name: this.name,
-          region: this.region,
-          numberofFT: this.numberofFT
-        }
-        console.log('Submitting in Fairy tale Form : ' + JSON.stringify(this.author, null, 5))
-        this.submitAuthor(this.author)
-      }, 500)
-
-      this.$router.params = this.file
-      this.$router.push('Authors')
-      console.log(this.file.name)
+      this.submitStatus = 'OK'
+      this.author = {
+        name: this.name,
+        region: this.region,
+        numberofFT: this.numberofFT
+      }
+      console.log('Submitting in Author Form : ' + JSON.stringify(this.author, null, 5))
+      this.submitAuthor(this.author)
     },
     submitAuthor: function (author) {
-      console.log('Submit fairy tale!')
-      console.log('Submitting in submitFairytale : ' + author)
+      console.log('Submit author!')
+      console.log('Submitting in author : ' + name)
       AuthorService.postAuthor(author)
         .then(response => {
+          this.$router.push('authors')
           console.log(response)
         })
         .catch(error => {

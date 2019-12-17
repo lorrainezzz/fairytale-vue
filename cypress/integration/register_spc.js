@@ -1,23 +1,43 @@
-describe('User Register', function() {
-  it('Register with a new account', function() {
-    cy.visit('/')
+describe('User Register', () => {
+  describe('Register with valid attributes.', function () {
+    it('Register successfully and turn to login page', function () {
+      cy.visit('/#/register')
 
-    cy.get('#__BVID__24__BV_button_').click()
-    cy.get('#__BVID__24 > .dropdown-menu > :nth-child(1) > .dropdown-item > .fa').click()
-    cy.get('a.btn').click()
+      cy.contains(' Username:')
+      cy.get('#input-live').type('Ann')
+        .should('have.value', 'Ann')
 
-    cy.get('#input-live')
-      .type('tree')
-      .should('have.value', 'tree')
+      cy.get('#__BVID__39').type('112233')
+        .should('have.value', '112233')
+      cy.get('#input-rpsd').type('112233')
+        .should('have.value', '112233')
 
-    cy.get('#__BVID__51')
-      .type('123456')
-      .should('have.value', '123456')
+      cy.get('#register\\ form > button').click()
+    })
+  })
 
-    cy.get('#input-rpsd')
-      .type('123456')
-      .should('have.value', '123456')
+  describe('Username or password is blank.', () => {
+    it('Reminder for blank attributes.', () => {
+      cy.visit('/#/register')
+      cy.contains('Enter at least 3 letters')
+      cy.contains('The password must be more than 5 digital')
+    })
+    it('Reminder for entering wrong different password in confirm password. ', () => {
+      cy.visit('/#/register')
 
-    cy.get('.btn').click()
+      cy.contains(' Username:')
+      cy.get('#input-live').type('Ann')
+        .should('have.value', 'Ann')
+
+
+      cy.get('#__BVID__39')
+        .type('112233')
+        .should('have.value', '112233')
+      cy.get('#input-rpsd')
+        .type('123456')
+        .should('have.value', '123456')
+
+      cy.contains('Confirm password must be the same.')
+    })
   })
 })

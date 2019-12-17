@@ -6,20 +6,9 @@
         <b-row>
           <b-col class="bg-light">
             <br/>
+
             <b-row>
-              <h5 class="toast-header">Please enter the password:</h5>
-            </b-row>
-            <b-row>
-                <b-form-input
-                  d = "input-psd" aria-describedby="input-psd-feedback" :state="psdState" v-model="enteredPassword" type = "password">
-                </b-form-input>
-                <b-form-invalid-feedback id="input-psd-feedback">
-                  The password must be more than 5 digital
-                </b-form-invalid-feedback>
-            </b-row>
-            <br/>
-            <b-row>
-              <h5 class="toast-header">Please enter the new password</h5>
+              <h5 class="toast-header">Please enter new password</h5>
             </b-row>
             <b-row>
                 <b-form-input
@@ -57,9 +46,7 @@
 import UserService from '@/services/userservice'
 export default {
   computed: {
-    psdState () {
-      return this.enteredPassword.length > 5 && this.enteredPassword === this.password
-    },
+
     npsdState () {
       return this.newpassword1 !== this.password && this.newpassword1.length > 5
     },
@@ -74,7 +61,6 @@ export default {
       userData: '',
       user: [],
       password: '',
-      enteredPassword: '',
       newpassword1: '',
       newpassword2: ''
     }

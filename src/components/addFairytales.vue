@@ -71,7 +71,7 @@ export default {
   name: 'adding',
   data () {
     return {
-      messagetitle: ' Fairy tale list ',
+      messagetitle: ' Adding Fairy Tale ',
       message: '',
       name: '',
       author: '',
@@ -99,12 +99,6 @@ export default {
     },
     submit () {
       console.log('submit!')
-      // this.$v.$touch()
-      // if (this.$v.$invalid) {
-      //   this.submitStatus = 'ERROR'
-      // } else {
-      //   this.submitStatus = 'PENDING'
-      //   setTimeout(() => {
       this.submitStatus = 'OK'
       this.fairytale = {
         name: this.name,
@@ -114,7 +108,6 @@ export default {
       }
       console.log('Submitting in Fairy tale Form : ' + JSON.stringify(this.fairytale, null, 5))
       this.submitFairytale(this.fairytale)
-      // }, 500)
     },
     submitFairytale: function (fairytale) {
       console.log('Submit Fairytale!')

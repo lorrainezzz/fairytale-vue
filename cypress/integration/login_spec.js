@@ -1,19 +1,25 @@
-describe('User Login', function() {
-  it('Login with an exited account', function() {
-    cy.visit('/')
+describe('Sign In Page', function () {
+  it('Sign in successfully and turn to home page', function () {
 
-    cy.get('#__BVID__24__BV_button_').click()
+    cy.visit('/#/login')
+    cy.setCookie('name', 'caroline')
+    cy.contains(' Username:')
+    cy.contains(' Password:')
+    cy.get('#__BVID__35')
+      .type('caroline')
+    cy.get('#__BVID__36')
+      .type('123123')
+    cy.get('#app > div > div > div > p > div > div:nth-child(6) > button').click()
+    cy.url()
+      .should('include', '/')
+    cy.getCookie('name')
+      .should('have.property', 'value', 'caroline')
+  })
 
-    cy.get('#__BVID__24 > .dropdown-menu > :nth-child(1) > .dropdown-item > .fa').click()
-
-    cy.get('#__BVID__42')
-      .type('tree')
-      .should('have.value', 'tree')
-
-    cy.get('#__BVID__43')
-      .type('123456')
-      .should('have.value', '123456')
-
-    cy.get('button.btn').click()
+  it('Turn to the register page', function () {
+    cy.get('#app > div > div > div > p > div > div:nth-child(6) > a').click()
+    cy.url()
+      .should('include', '/#/register')
+    cy.getCookies().should('be.empty')
   })
 })

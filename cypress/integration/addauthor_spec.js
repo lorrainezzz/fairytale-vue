@@ -5,14 +5,15 @@ describe('Add a new author', function() {
     cy.get(':nth-child(4) > .nav-link').click()
 
     cy.get(':nth-child(2) > .form__input')
-      .type('Hellen')
-      .should('have.value', 'Hellen')
+      .type('Carl')
+      .should('have.value', 'Carl')
 
     cy.get('#type1')
       .select('Greek')
 
     cy.get(':nth-child(3) > .form__input')
-      .type(1)
+      .clear()
+      .type(3)
 
     cy.get('.btn').click()
 

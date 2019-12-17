@@ -15,14 +15,14 @@
               d = "input-psd" aria-describedby="input-psd-feedback" :state="psdState" v-model="password" type = "password" placeholder="Enter your password">
             </b-form-input>
             <b-form-invalid-feedback id="input-psd-feedback">
-              The password must be more than 6 digital
+              The password must be more than 5 digital
             </b-form-invalid-feedback>
           </b-form-group>
 
           <b-form-group label-cols-sm="3" label="Confirm Password:" label-align-sm="right" >
             <b-form-input id = "input-rpsd" aria-describedby="input-rpsd-feedback" :state="rpsdState" v-model="repassword" type = "password" placeholder="Repeat your password"></b-form-input>
             <b-form-invalid-feedback id="input-rpsd-feedback">
-              The two password must be the same
+              Confirm password must be the same.
             </b-form-invalid-feedback>
           </b-form-group>
         </b-form-group>
